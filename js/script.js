@@ -1,8 +1,30 @@
+
 const ruleta = document.querySelector('#ruleta');
 
+//const form = document.querySelector('#form')
+//form.addEventListener('submit', handleSubmit )
+
+/* function handleSubmit (e){
+  e.preventDefault()
+  if (email){
+    trigger = true
+  }
+} */
+
+
+
+
+
 ruleta.addEventListener('click', girar);
-giros = 0;
-function girar(){
+let giros = 0;
+async function girar(e){
+
+/*   e.preventDefault()
+  const email = document.getElementById('email').value
+  const result = await getIngles(email)
+  console.log(result) */
+/*   if(email && result){   */
+  
   if (giros < 3) {
     let rand = Math.random() * 7200;
     calcular(rand);
@@ -20,7 +42,7 @@ function girar(){
     }).then((result)=>{
       if (result.value == true) {
         giros = 0;
-         document.querySelector('.elije').innerHTML = 'TU CORTESIA ES: ';
+         document.querySelector('.elije').innerHTML = 'Resultado: ';
          document.querySelector('.contador').innerHTML = 'TURNOS: ' + giros;        
       }
     })
@@ -29,46 +51,32 @@ function girar(){
 
 function premio(premios){
 
-  document.querySelector('.elije').innerHTML = 'TU CORTESIA ES: ' + premios;
+  document.querySelector('.elije').innerHTML = 'Resultado: ' + premios;
 
 }
 
 
  function calcular(rand) {
 
-  valor = rand / 360;
+  let valor = rand / 360;
   valor = (valor - parseInt(valor.toString().split(".")[0]))* 360;
   ruleta.style.transform = "rotate("+rand+"deg)";
-
   setTimeout(() => {
   switch (true) {
-    case valor > 0 && valor <= 45:
-     premio("2 estrellas");
+    case valor > 0 && valor <= 180:
+     premio("Ganador");
+     
      break;
-     case valor > 45 && valor <= 90:
-     premio("5 Piezas");
-     break;
-     case valor > 90 && valor <= 135:
-     premio("2 Corazón"); 
-     break; 
-     case valor > 135 && valor <= 180:
-     premio("2 Nigiri");
-     break;
-     case valor > 180 && valor <= 225:
-     premio("Handroll Mini");
-     break; 
-     case valor > 225 && valor <= 270:
-     premio("NO HAY CORTESIAS ESTA VEZ");
-     break;
-     case valor > 270 && valor <= 315:
-     premio("Una Coca Cola de 2L");
-     break;
-     case valor > 315 && valor <= 360:
-     premio("2 Enjoy"); 
+     case valor > 180 && valor <= 360:
+     premio("Perdedor"); 
      break;
   }
 
  }, 5000);
 
 }
+/* }else{
+  alert('inserte correo valido')
+} */
 }
+

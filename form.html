@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de la Ruleta</title>
+  <link rel="stylesheet" href="css/form.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="icon" href="data:,">
+</head>
+
+<body class="body">
+
+    <div>
+        <div class="d-flex justify-content-center mt-5">
+        <form class="text-center" onSubmit={handleSubmit}>
+            <label class="form-label letras-form">correo</label>
+            <input class="form-control" type="email" name="email" placeholder="email" />
+
+            <label class="form-label letras-form">rut</label>
+            <input class="form-control" type="text" name="rut" placeholder="rut"  />
+
+            <label class="form-label letras-form">nombre</label>
+            <input class="form-control" type="text" name="nombre" placeholder="nombre"  />
+
+            <label class="form-label letras-form">telefono</label>
+            <input class="form-control" type="text" name="telefono" placeholder="telefono"  />
+    
+            <label class="form-label letras-form">direccion</label>
+            <input class="form-control" type="text" name="direccion" placeholder="direccion"  />
+
+            <label class="form-label letras-form">fecha de nacimiento</label>
+            <input class="form-control" type="text" name="nacimiento" placeholder="nacimiento"  />
+
+
+
+          <button class=" btn boton my-4" type="submit"><img src="./image/BotónVamos.png" alt="boton vamos"/></button>
+
+          <div class="form-check letritas">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+                Acepto Terminos y condiciones
+            </label>
+          </div>
+
+          <div class="form-check letritas">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+                Acepto el aviso de Privacidad
+            </label>
+          </div>
+
+          <div class="form-check letritas">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+                Acepto recibir comunicaciones de Nestle y sus marcas
+            </label>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script type="module" src="js/script.js"></script>
+</body>
+
+</html>
